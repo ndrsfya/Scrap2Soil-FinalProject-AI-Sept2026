@@ -695,6 +695,762 @@ def apply_styles(st):
         line-height: 1.4;
     }}
 
+
+    /* Success and warning messages: force light backgrounds and dark text */
+    div[data-testid="stAlert"],
+    div[data-testid="stAlert"] [data-baseweb="notification"],
+    div[data-testid="stAlert"] [role="alert"] {{
+        background: #E8F2E6 !important;
+        background-color: #E8F2E6 !important;
+        border: 1px solid #B8D0B4 !important;
+        border-radius: 14px !important;
+        color: #294B34 !important;
+    }}
+
+    /* Keep nested alert containers transparent so they do not cover the light background */
+    div[data-testid="stAlert"] > div,
+    div[data-testid="stAlert"] > div > div,
+    div[data-testid="stAlert"] [data-testid="stMarkdownContainer"] {{
+        background: transparent !important;
+        background-color: transparent !important;
+    }}
+
+    /* Force all alert text to use a readable dark green */
+    div[data-testid="stAlert"] *,
+    div[data-testid="stAlert"] p,
+    div[data-testid="stAlert"] span {{
+        color: #294B34 !important;
+        -webkit-text-fill-color: #294B34 !important;
+    }}
+
+    /* Alert icons */
+    div[data-testid="stAlert"] svg {{
+        color: #527D59 !important;
+        fill: #527D59 !important;
+    }}
+
+    [data-testid="stException"] {{
+        background: #FFF1EF !important;
+        border: 1px solid #E5B9B4 !important;
+        border-radius: 12px !important;
+    }}
+    [data-testid="stException"] * {{
+        color: #702F2F !important;
+    }}
+
+
+    /* Consistent light green controls and readable tables. */
+    [data-testid="stSelectbox"] [data-baseweb="select"] > div,
+    [data-testid="stMultiSelect"] [data-baseweb="select"] > div {{
+        background: #F4F8F1 !important;
+        border: 1.5px solid #AFC5AE !important;
+        color: #24452F !important;
+    }}
+    [data-testid="stSelectbox"] [data-baseweb="select"] input,
+    [data-testid="stSelectbox"] [data-baseweb="select"] span,
+    [data-testid="stSelectbox"] [data-baseweb="select"] div {{
+        color: #24452F !important;
+        -webkit-text-fill-color: #24452F !important;
+    }}
+    [data-baseweb="popover"] [role="listbox"],
+    [data-baseweb="popover"] [role="option"],
+    [data-baseweb="menu"] {{
+        background: #F7FBF5 !important;
+        color: #24452F !important;
+    }}
+    [data-baseweb="popover"] [role="option"] * {{
+        color: #24452F !important;
+        -webkit-text-fill-color: #24452F !important;
+    }}
+    [data-baseweb="popover"] [role="option"]:hover,
+    [data-baseweb="popover"] [aria-selected="true"] {{
+        background: #DDEBDD !important;
+        color: #24452F !important;
+    }}
+    .green-table-wrap {{
+        width: 100%; overflow-x: auto; border: 1px solid #BFD2BC;
+        border-radius: 13px; margin: 0.5rem 0 1rem; background: #F6FAF3;
+    }}
+    .green-table {{
+        width: 100%; border-collapse: collapse; background: #F6FAF3;
+        color: #203B29; font-size: 0.94rem; line-height: 1.45;
+    }}
+    .green-table th {{
+        background: #D8E8D5; color: #203B29; font-weight: 800;
+        text-align: left; padding: 0.8rem 0.75rem; border: 1px solid #C6D9C2;
+        white-space: normal;
+    }}
+    .green-table td {{
+        background: #F6FAF3; color: #203B29; padding: 0.75rem;
+        border: 1px solid #D8E5D4; vertical-align: top; white-space: normal;
+        overflow-wrap: anywhere; min-width: 90px;
+    }}
+    .green-table tbody tr:nth-child(even) td {{ background: #EAF2E7; }}
+    [data-testid="stChatMessage"] p {{
+        color: #203B29 !important; font-size: 1rem !important; line-height: 1.55 !important;
+    }}
+    [data-testid="stChatInput"] textarea {{
+        background: #FFFFFF !important; color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+    }}
+
+
+    /* Make all form controls readable and consistent with the light theme */
+    [data-testid="stTextInput"] input,
+    [data-testid="stNumberInput"] input,
+    [data-testid="stDateInput"] input,
+    [data-testid="stTimeInput"] input,
+    [data-testid="stTextArea"] textarea,
+    [data-baseweb="input"] input,
+    [data-baseweb="textarea"] textarea,
+    [data-baseweb="datepicker"] input {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+        caret-color: #203B29 !important;
+        border-color: #AFC5AE !important;
+    }}
+
+    /* Light backgrounds for the outer input containers */
+    [data-testid="stTextInput"] [data-baseweb="input"],
+    [data-testid="stNumberInput"] [data-baseweb="input"],
+    [data-testid="stDateInput"] [data-baseweb="input"],
+    [data-testid="stTimeInput"] [data-baseweb="input"],
+    [data-testid="stTextArea"] [data-baseweb="textarea"],
+    [data-baseweb="datepicker"] {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        border: 1px solid #AFC5AE !important;
+        border-radius: 10px !important;
+    }}
+
+    /* Text inside selected dropdown values */
+    [data-testid="stSelectbox"] [data-baseweb="select"] *,
+    [data-testid="stMultiSelect"] [data-baseweb="select"] *,
+    [data-testid="stSelectbox"] [data-baseweb="select"] input,
+    [data-testid="stMultiSelect"] [data-baseweb="select"] input {{
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+    }}
+
+    /* Multiselect selected tags */
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] {{
+        background: #DDEBDD !important;
+        border: 1px solid #AFC5AE !important;
+        color: #203B29 !important;
+    }}
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] *,
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] span {{
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+    }}
+
+    /* Number input increment and decrement controls */
+    [data-testid="stNumberInput"] button {{
+        background: #E8F2E6 !important;
+        color: #294B34 !important;
+        border-color: #AFC5AE !important;
+    }}
+    [data-testid="stNumberInput"] button svg {{
+        fill: #294B34 !important;
+        color: #294B34 !important;
+    }}
+
+    /* Input labels, help text and placeholders */
+    [data-testid="stWidgetLabel"],
+    [data-testid="stWidgetLabel"] *,
+    [data-testid="stHelp"],
+    [data-testid="stMarkdownContainer"] label {{
+        color: #203B29 !important;
+    }}
+    input::placeholder,
+    textarea::placeholder {{
+        color: #718071 !important;
+        -webkit-text-fill-color: #718071 !important;
+        opacity: 1 !important;
+    }}
+
+    /* Dropdown menus and date picker calendar */
+    [data-baseweb="popover"],
+    [data-baseweb="popover"] *,
+    [data-baseweb="calendar"],
+    [data-baseweb="calendar"] * {{
+        color: #203B29 !important;
+    }}
+    [data-baseweb="popover"] [role="listbox"],
+    [data-baseweb="popover"] [role="option"],
+    [data-baseweb="calendar"] {{
+        background: #F7FBF5 !important;
+    }}
+
+    /* Keep success and warning alerts light and readable */
+    div[data-testid="stAlert"],
+    div[data-testid="stAlert"] [role="alert"] {{
+        background: #E8F2E6 !important;
+        background-color: #E8F2E6 !important;
+        border: 1px solid #B8D0B4 !important;
+        border-radius: 14px !important;
+        color: #294B34 !important;
+    }}
+    div[data-testid="stAlert"] > div,
+    div[data-testid="stAlert"] > div > div,
+    div[data-testid="stAlert"] [data-testid="stMarkdownContainer"] {{
+        background: transparent !important;
+        background-color: transparent !important;
+    }}
+    div[data-testid="stAlert"] *,
+    div[data-testid="stAlert"] p,
+    div[data-testid="stAlert"] span {{
+        color: #294B34 !important;
+        -webkit-text-fill-color: #294B34 !important;
+    }}
+    div[data-testid="stAlert"] svg {{
+        color: #527D59 !important;
+        fill: #527D59 !important;
+    }}
+
+
+    /* Final Compost Planner overrides: preserve the original cream, green and red design */
+    .stApp {{
+        background: #FBF8F0 !important;
+        color: #1F3526 !important;
+    }}
+
+    /* Keep text fields and date inputs white with dark readable text */
+    [data-testid="stTextInput"] input,
+    [data-testid="stNumberInput"] input,
+    [data-testid="stDateInput"] input,
+    [data-testid="stTimeInput"] input,
+    [data-testid="stTextArea"] textarea,
+    [data-baseweb="input"] input,
+    [data-baseweb="textarea"] textarea,
+    [data-baseweb="datepicker"] input {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+        caret-color: #203B29 !important;
+        border-color: #C9D8C8 !important;
+    }}
+
+    [data-testid="stTextInput"] [data-baseweb="input"],
+    [data-testid="stNumberInput"] [data-baseweb="input"],
+    [data-testid="stDateInput"] [data-baseweb="input"],
+    [data-testid="stTimeInput"] [data-baseweb="input"],
+    [data-testid="stTextArea"] [data-baseweb="textarea"],
+    [data-baseweb="datepicker"] {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        border: 1px solid #C9D8C8 !important;
+        border-radius: 10px !important;
+    }}
+
+    /* Restore the red selected-material chips from the original design */
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] {{
+        background: #C83B50 !important;
+        border: 1px solid #C83B50 !important;
+        color: #FFFFFF !important;
+    }}
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] *,
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] span,
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] svg {{
+        color: #FFFFFF !important;
+        fill: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
+    }}
+
+    /* Keep the multiselect field itself light */
+    [data-testid="stMultiSelect"] [data-baseweb="select"] > div {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        border: 1px solid #C9D8C8 !important;
+    }}
+    [data-testid="stMultiSelect"] [data-baseweb="select"] input {{
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+    }}
+
+    /* Restore the red primary action button */
+    div.stButton > button[kind="primary"],
+    div.stFormSubmitButton > button[kind="primary"] {{
+        background: #C83B50 !important;
+        background-color: #C83B50 !important;
+        border: 1px solid #C83B50 !important;
+        color: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
+        border-radius: 10px !important;
+    }}
+    div.stButton > button[kind="primary"]:hover,
+    div.stFormSubmitButton > button[kind="primary"]:hover {{
+        background: #AD3044 !important;
+        background-color: #AD3044 !important;
+        border-color: #AD3044 !important;
+        color: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
+    }}
+
+    /* Keep number stepper controls light green */
+    [data-testid="stNumberInput"] button {{
+        background: #E8F2E6 !important;
+        color: #294B34 !important;
+        border-color: #C9D8C8 !important;
+    }}
+    [data-testid="stNumberInput"] button svg {{
+        color: #294B34 !important;
+        fill: #294B34 !important;
+    }}
+
+    /* Keep success and warning messages readable without changing the page theme */
+    div[data-testid="stAlert"] {{
+        background: #E8F2E6 !important;
+        background-color: #E8F2E6 !important;
+        border: 1px solid #B8D0B4 !important;
+        border-radius: 14px !important;
+        color: #294B34 !important;
+    }}
+    div[data-testid="stAlert"] > div,
+    div[data-testid="stAlert"] > div > div,
+    div[data-testid="stAlert"] [data-testid="stMarkdownContainer"] {{
+        background: transparent !important;
+        background-color: transparent !important;
+    }}
+    div[data-testid="stAlert"] *,
+    div[data-testid="stAlert"] p,
+    div[data-testid="stAlert"] span {{
+        color: #294B34 !important;
+        -webkit-text-fill-color: #294B34 !important;
+    }}
+    div[data-testid="stAlert"] svg {{
+        color: #527D59 !important;
+        fill: #527D59 !important;
+    }}
+
+
+
+    /* Final Scrap2Soil palette: sage sidebar, green actions, cream canvas */
+    [data-testid="stSidebar"],
+    [data-testid="stSidebar"] > div:first-child {{
+        background-color: #66866D !important;
+    }}
+
+    /* Primary buttons use the same sage-green family as the sidebar */
+    div.stButton > button[kind="primary"],
+    div.stFormSubmitButton > button[kind="primary"],
+    [data-testid="stForm"] button[kind="primary"] {{
+        background: #71977A !important;
+        background-color: #71977A !important;
+        border: 1px solid #71977A !important;
+        color: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
+        border-radius: 12px !important;
+    }}
+    div.stButton > button[kind="primary"]:hover,
+    div.stFormSubmitButton > button[kind="primary"]:hover,
+    [data-testid="stForm"] button[kind="primary"]:hover {{
+        background: #587C61 !important;
+        background-color: #587C61 !important;
+        border-color: #587C61 !important;
+        color: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
+    }}
+
+    /* Date input: white field with dark readable text */
+    [data-testid="stDateInput"],
+    [data-testid="stDateInput"] > div,
+    [data-testid="stDateInput"] [data-baseweb="datepicker"],
+    [data-testid="stDateInput"] [data-baseweb="input"],
+    [data-testid="stDateInput"] [data-baseweb="input"] > div {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        border-color: #C9D8C8 !important;
+        color: #203B29 !important;
+        border-radius: 10px !important;
+        box-shadow: none !important;
+    }}
+    [data-testid="stDateInput"] input,
+    [data-testid="stDateInput"] input[type="text"] {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+        caret-color: #203B29 !important;
+        border: 0 !important;
+    }}
+    [data-testid="stDateInput"] button {{
+        background: #FFFFFF !important;
+        color: #587C61 !important;
+        border: 0 !important;
+    }}
+    [data-testid="stDateInput"] svg {{
+        color: #587C61 !important;
+        fill: #587C61 !important;
+    }}
+
+    /* Material multiselect: white input area, readable selected values */
+    [data-testid="stMultiSelect"] [data-baseweb="select"],
+    [data-testid="stMultiSelect"] [data-baseweb="select"] > div,
+    [data-testid="stMultiSelect"] [data-baseweb="select"] > div > div {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        border-color: #C9D8C8 !important;
+        color: #203B29 !important;
+        box-shadow: none !important;
+    }}
+    [data-testid="stMultiSelect"] input,
+    [data-testid="stMultiSelect"] [role="combobox"],
+    [data-testid="stMultiSelect"] [data-baseweb="select"] span {{
+        background: transparent !important;
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+    }}
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] {{
+        background: #DDEBDD !important;
+        border: 1px solid #B7CDB5 !important;
+        color: #294B34 !important;
+    }}
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] *,
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] span,
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] svg {{
+        color: #294B34 !important;
+        fill: #294B34 !important;
+        -webkit-text-fill-color: #294B34 !important;
+    }}
+
+    /* Keep all other text and number inputs white as well */
+    [data-testid="stTextInput"] input,
+    [data-testid="stNumberInput"] input,
+    [data-testid="stTextArea"] textarea,
+    [data-testid="stTimeInput"] input {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+        border-color: #C9D8C8 !important;
+    }}
+
+    /* White calendar popup with dark text */
+    [data-baseweb="calendar"],
+    [data-baseweb="calendar"] *,
+    [data-baseweb="datepicker"] [role="dialog"] {{
+        background-color: #FFFFFF !important;
+        color: #203B29 !important;
+    }}
+    [data-baseweb="calendar"] button:hover {{
+        background: #E8F2E6 !important;
+    }}
+
+
+    /* FINAL FIX: date picker and material chooser must stay white */
+    [data-testid="stDateInput"] [data-baseweb="datepicker"],
+    [data-testid="stDateInput"] [data-baseweb="datepicker"] > div,
+    [data-testid="stDateInput"] [data-baseweb="input"],
+    [data-testid="stDateInput"] [data-baseweb="input"] > div,
+    [data-testid="stDateInput"] [data-baseweb="input"] > div > div {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        color: #203B29 !important;
+        border-color: #C9D8C8 !important;
+        box-shadow: none !important;
+    }}
+    [data-testid="stDateInput"] input {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+    }}
+    [data-testid="stDateInput"] button,
+    [data-testid="stDateInput"] button:hover {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        color: #587C61 !important;
+    }}
+    [data-testid="stDateInput"] svg {{
+        color: #587C61 !important;
+        fill: #587C61 !important;
+    }}
+
+    [data-testid="stMultiSelect"] [data-baseweb="select"],
+    [data-testid="stMultiSelect"] [data-baseweb="select"] > div,
+    [data-testid="stMultiSelect"] [data-baseweb="select"] > div > div,
+    [data-testid="stMultiSelect"] [data-baseweb="select"] > div > div > div {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        color: #203B29 !important;
+        border-color: #C9D8C8 !important;
+        box-shadow: none !important;
+    }}
+    [data-testid="stMultiSelect"] input,
+    [data-testid="stMultiSelect"] [role="combobox"] {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+    }}
+    /* Keep selected material chips sage green */
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] {{
+        background: #DDEBDD !important;
+        background-color: #DDEBDD !important;
+        border: 1px solid #B7CDB5 !important;
+        color: #294B34 !important;
+    }}
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] *,
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] svg {{
+        color: #294B34 !important;
+        fill: #294B34 !important;
+        -webkit-text-fill-color: #294B34 !important;
+    }}
+
+
+    /* Final form-control correction to match the light Compost Planner design */
+
+    /* Date input: white field and dark text */
+    [data-testid="stDateInput"] [data-baseweb="datepicker"],
+    [data-testid="stDateInput"] [data-baseweb="input"],
+    [data-testid="stDateInput"] [data-baseweb="input"] > div,
+    [data-testid="stDateInput"] [data-baseweb="input"] > div > div {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        border-color: #C9D8C8 !important;
+        color: #203B29 !important;
+        box-shadow: none !important;
+    }}
+    [data-testid="stDateInput"] input,
+    [data-testid="stDateInput"] input[type="text"] {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+        caret-color: #203B29 !important;
+    }}
+    [data-testid="stDateInput"] button,
+    [data-testid="stDateInput"] button:hover {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        color: #66866D !important;
+    }}
+    [data-testid="stDateInput"] button svg {{
+        color: #66866D !important;
+        fill: #66866D !important;
+    }}
+
+    /* Material chooser: white control with dark text */
+    [data-testid="stMultiSelect"] [data-baseweb="select"] {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        border: 1px solid #C9D8C8 !important;
+        box-shadow: none !important;
+    }}
+    [data-testid="stMultiSelect"] [data-baseweb="select"] > div,
+    [data-testid="stMultiSelect"] [data-baseweb="select"] > div > div,
+    [data-testid="stMultiSelect"] [data-baseweb="select"] > div > div > div {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        color: #203B29 !important;
+        box-shadow: none !important;
+    }}
+    [data-testid="stMultiSelect"] input,
+    [data-testid="stMultiSelect"] [role="combobox"] {{
+        background: transparent !important;
+        background-color: transparent !important;
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+    }}
+
+    /* Keep selected material chips red with white text, as in the reference design */
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] {{
+        background: #C83B50 !important;
+        background-color: #C83B50 !important;
+        border: 1px solid #C83B50 !important;
+        color: #FFFFFF !important;
+    }}
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] *,
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] span,
+    [data-testid="stMultiSelect"] [data-baseweb="tag"] svg {{
+        background: transparent !important;
+        color: #FFFFFF !important;
+        fill: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
+    }}
+
+    /* Light dropdown and calendar popovers */
+    [data-baseweb="popover"],
+    [data-baseweb="popover"] > div,
+    [data-baseweb="popover"] [role="dialog"],
+    [data-baseweb="calendar"],
+    [data-baseweb="calendar"] > div {{
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        color: #203B29 !important;
+    }}
+    [data-baseweb="calendar"] *,
+    [data-baseweb="popover"] [role="option"],
+    [data-baseweb="popover"] [role="listbox"] {{
+        color: #203B29 !important;
+    }}
+    [data-baseweb="calendar"] button:hover,
+    [data-baseweb="popover"] [role="option"]:hover {{
+        background: #E8F2E6 !important;
+        color: #203B29 !important;
+    }}
+
+
+    /* Starting date field matches the cream page background */
+    div[data-testid="stDateInput"] [data-baseweb="datepicker"],
+    div[data-testid="stDateInput"] [data-baseweb="input"],
+    div[data-testid="stDateInput"] [data-baseweb="input"] > div,
+    div[data-testid="stDateInput"] [data-baseweb="input"] > div > div,
+    div[data-testid="stDateInput"] input,
+    div[data-testid="stDateInput"] button {{
+        color-scheme: light !important;
+        background-color: #FBF8F0 !important;
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+        border-color: #DCE4D8 !important;
+    }}
+
+    div[data-testid="stDateInput"] svg,
+    div[data-testid="stDateInput"] button svg {{
+        background-color: transparent !important;
+        color: #66866D !important;
+        fill: #66866D !important;
+        -webkit-text-fill-color: #66866D !important;
+    }}
+
+    /* The calendar is rendered in a popover outside the date-input wrapper */
+    div[data-baseweb="popover"]:has([data-baseweb="calendar"]),
+    div[data-baseweb="popover"]:has([data-baseweb="calendar"]) *,
+    [data-baseweb="calendar"],
+    [data-baseweb="calendar"] * {{
+        color-scheme: light !important;
+        background-color: #FFFFFF !important;
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+    }}
+
+    [data-baseweb="calendar"] button:hover {{
+        background-color: #E8F2E6 !important;
+        color: #203B29 !important;
+    }}
+
+    [data-baseweb="calendar"] button[aria-selected="true"],
+    [data-baseweb="calendar"] button[aria-pressed="true"] {{
+        background-color: #71977A !important;
+        color: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
+    }}
+
+    /* White material-selection field; preserve the red selected chips */
+    div[data-testid="stMultiSelect"] [data-baseweb="select"],
+    div[data-testid="stMultiSelect"] [data-baseweb="select"] > div,
+    div[data-testid="stMultiSelect"] [data-baseweb="select"] > div > div,
+    div[data-testid="stMultiSelect"] [data-baseweb="select"] > div > div > div {{
+        color-scheme: light !important;
+        background-color: #FFFFFF !important;
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+        border-color: #C9D8C8 !important;
+    }}
+
+    div[data-testid="stMultiSelect"] input,
+    div[data-testid="stMultiSelect"] [role="combobox"] {{
+        background-color: transparent !important;
+        color: #203B29 !important;
+        -webkit-text-fill-color: #203B29 !important;
+    }}
+
+    div[data-testid="stMultiSelect"] [data-baseweb="tag"] {{
+        background-color: #C83B50 !important;
+        color: #FFFFFF !important;
+    }}
+
+    div[data-testid="stMultiSelect"] [data-baseweb="tag"] *,
+    div[data-testid="stMultiSelect"] [data-baseweb="tag"] svg {{
+        background-color: transparent !important;
+        color: #FFFFFF !important;
+        fill: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
+    }}
+
+    </style>
+    """, unsafe_allow_html=True)
+
+        margin-bottom: 0.55rem;
+    }}
+    .plant-name {{
+        color: #294B34 !important;
+        font-size: 1rem;
+        font-weight: 900;
+        margin-bottom: 0.12rem;
+    }}
+    .plant-caption {{
+        color: #637766 !important;
+        font-size: 0.82rem;
+        line-height: 1.35;
+    }}
+    .stat-panel {{
+        background: #FFFEFC;
+        border: 1.5px solid #D9E5D5;
+        border-radius: 22px;
+        padding: 1.1rem 1.2rem;
+        box-shadow: 0 5px 16px rgba(41, 75, 52, 0.05);
+        height: 100%;
+    }}
+    .stat-number {{
+        color: #294B34 !important;
+        font-size: 1.8rem;
+        font-weight: 900;
+        line-height: 1.1;
+    }}
+    .stat-label {{
+        color: #637766 !important;
+        font-size: 0.82rem;
+        font-weight: 700;
+    }}
+    .mix-track {{
+        height: 13px;
+        width: 100%;
+        border-radius: 99px;
+        overflow: hidden;
+        background: #E9EEE4;
+        display: flex;
+        margin: 0.4rem 0 0.55rem;
+    }}
+    .mix-green {{
+        height: 100%;
+        background: #679A70;
+    }}
+    .mix-brown {{
+        height: 100%;
+        background: #C69A68;
+    }}
+    .mix-legend {{
+        display: flex;
+        justify-content: space-between;
+        gap: 0.7rem;
+        color: #405443;
+        font-size: 0.84rem;
+        font-weight: 750;
+    }}
+    .batch-progress-label {{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        color: #294B34;
+        font-weight: 850;
+        gap: 0.5rem;
+    }}
+    .batch-progress-label span:last-child {{
+        color: #62896B;
+        font-size: 1.05rem;
+        font-weight: 900;
+    }}
+    .percentage-note {{
+        color: #687B6A !important;
+        font-size: 0.76rem;
+        line-height: 1.4;
+    }}
+
     [data-testid="stAlert"] {{
         background: #1F2A3D !important;
         background-color: #1F2A3D !important;
