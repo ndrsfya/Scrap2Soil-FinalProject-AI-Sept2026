@@ -1,14 +1,14 @@
-# FinalProject-AI-Sept2026
+# TEB2023 – Artificial Intelligence Final Project Sept2026
 
-# 🌱 Scrap2Soil – AI-Powered Compost Planning and Organic Waste Management
+# Scrap2Soil – AI-Powered Compost Planning and Organic Waste Management
 
-Group 10 | TEB2023 – Artificial Intelligence
+# Group 10 
 
-About the Project
+# About the Project
 
 Scrap2Soil is a web-based compost planning system developed to help UTP students, staff, and café operators manage organic waste more sustainably. Using a rule-based recommendation system, it helps users identify compostable materials, estimate a suitable mix of green and brown materials, get advice on common composting problems, and track their compost batches.
 
-How to Run the Project
+# How to Run the Project
 
    1. 
 
