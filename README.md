@@ -1,6 +1,7 @@
 # **🌱 Scrap2Soil – AI-Powered Compost Planning and Organic Waste Management**
 
 TEB2023 – Artificial Intelligence
+
 Group 10
 
 # **About the Project**
